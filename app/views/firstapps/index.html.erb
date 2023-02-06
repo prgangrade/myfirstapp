@@ -1,0 +1,10 @@
+<h1>Physics marks list</h1>
+<%@details.each do |detail|%>
+    <table border="1">
+    
+    <tr><th>Name</th><th>Rollno</th><th>Marks</th><th>Links</th><th></th><th>delete</th></tr>
+    <tr><td><%=detail.name%></td><td><%=detail.rollno%></td><td><%=detail.marks%></td><td><%=link_to "view",detail%></td><td><%=link_to "edit",edit_firstapp_path(detail)%></td><td><%=link_to "delete",detail,data: {turbo_method: :delete}%></td></tr><br>
+    </table>
+    
+<%end%>
+<a href="firstapps/new">new record</a>
