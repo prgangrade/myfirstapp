@@ -1,0 +1,10 @@
+<%= render "firstapps/first"%>
+
+<%@details.each do |detail| %>
+<h1 class="bcd"><%=detail.name%><%=detail.id%></h1>
+<% end %>
+<%= stylesheet_link_tag "main"%> 
+<%= render partial: "firstapps/first" %>
+
+
+

@@ -1,0 +1,9 @@
+<h1><a href="ones/new">new record</a></h1>
+
+
+<table border="1">
+<%@vars.each do |var| %>
+<tr><th>one_name</th><th>two_name</th></tr>
+<tr><td><%=var.name%></td><td></td><tr>
+<% end %>
+</table>

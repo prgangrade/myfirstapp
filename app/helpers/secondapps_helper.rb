@@ -1,0 +1,2 @@
+module SecondappsHelper
+end

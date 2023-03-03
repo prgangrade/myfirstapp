@@ -11,5 +11,11 @@
 <%= form.label :enter_marks %>
 <%= form.text_field :marks %><br>
 </div>
+<div>
+<%= form.fields_for :secondapps do |second_form| %>
+      <%= second_form.text_field :name %>
+    
+  <% end %>
+</div>
 <%= form.submit 'edit'%>
 <% end %>

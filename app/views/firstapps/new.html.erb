@@ -1,15 +1,56 @@
-<%= form_with model: @detail, data: {remote: false} do |form| %>
+
+<%= form_with model: @detail, data: {remote: false}, builder: Newbuilder do |form| %>
 <div>
-<%= form.label :enter_name %>
+
 <%= form.text_field :name %><br>
 </div>
 <div>
-<%= form.label :enter_rollno %>
+
 <%= form.text_field :rollno %><br>
 </div>
 <div>
-<%= form.label :enter_marks %>
+
 <%= form.text_field :marks %><br>
 </div>
+
+<div>
+<%=form.label :enter_gender%>
+<%=form.radio_button :gender, "male"%>
+<%= form.label :male_gender, "  Male" %>
+<%= form.radio_button :gender, "female" %>
+<%= form.label :female_gender, "Female" %>
+</div>
+<div>
+<%= form.label :enter_date %>
+<%= form.date_field :date_of_birth%>
+</div>
+<div>
+<%= form.label :enter_language%>
+<%=form.select :language, {"experienced" => [["ruby","rb"],["rails","rl"]], "fresher" => [["java","jv"], ["python","py"]]}%>
+</div>
+<div>
+ <%# <%= form.collection_select :firstapp, Firstapp.order(:name), :id, :name %>
+ 
+
+</div>
+<div>
+<%= form.file_field :image %>
+</div>
+
+<div>
+<%= form.fields_for :secondapps do |second_form| %>
+      <%= second_form.text_field :name %>
+    
+  <% end %>
+</div>
 <%= form.submit 'create'%>
+
+
+
+
 <% end %>
+
+
+
+
+
